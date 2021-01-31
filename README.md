@@ -54,7 +54,11 @@ const columns = [
 |prop name|description|
 |---------|-----------|
 |`column` |the table columns to define table|
-
+|`data` |the table data (could come from the database)|
+|`columnKey` |the unique key to identify each row|
+|`noDataLabel` |label to show when no data|
+|`isDraggable` |make the table's row draggable|
+|`onDragEnd` |callback function will be fired when drag is end ( will give you the new order)|
 
 
 
