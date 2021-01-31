@@ -1,45 +1,125 @@
 import React from 'react'
-
-import ReactTable from 'react-tb'
-import 'react-tb/dist/index.css'
+import { ReactTb } from 'react-tb'
 
 const columns: any = [
   {
-    name: 'Id',
+    name: 'email',
     isHidden: false,
     body: (item: any) => (
       <td>
-        <div className='btn'>{item.id}</div>
+        <div className='btn'>{item.email}</div>
       </td>
     )
   },
   {
-    name: 'Username',
+    name: 'username',
     isHidden: false,
     body: (item: any) => (
       <td>
-        <div className='btn'>{item.name}</div>
+        <div className='btn'>{item.username}</div>
+      </td>
+    )
+  },
+  {
+    name: 'phone',
+    isHidden: false,
+    body: (item: any) => (
+      <td>
+        <div className='btn'>{item.phone}</div>
+      </td>
+    )
+  },
+  {
+    name: 'gender',
+    isHidden: false,
+    body: (item: any) => (
+      <td>
+        <div className='btn'>{item.gender}</div>
+      </td>
+    )
+  },
+  {
+    name: 'country',
+    isHidden: false,
+    body: (item: any) => (
+      <td>
+        <div className='btn'>{item.country}</div>
+      </td>
+    )
+  },
+  {
+    name: 'address',
+    isHidden: false,
+    body: (item: any) => (
+      <td>
+        <div className='btn'>{item.address}</div>
       </td>
     )
   }
 ]
 
-// const App = () => {
-//   return (
-//     <ReactTable
-//       data={[
-//         { id: 1, name: 'siddig' },
-//         { id: 1, name: 'siddig' },
-//         { id: 1, name: 'siddig' }
-//       ]}
-//       noDataLabel='no data found'
-//       columns={columns}
-//     />
-//   )
-// }
+const data = [
+  {
+    id: 1,
+    username: 'elsiddig',
+    email: 'example@gmail.com',
+    phone: '0123456789',
+    gender: 'male',
+    country: 'sudan',
+    address: '123 str'
+  },
+  {
+    id: 2,
+    username: 'ahmed',
+    email: 'example@gmail.com',
+    phone: '0123456789',
+    gender: 'male',
+    country: 'sudan',
+    address: '123 str'
+  },
+  {
+    id: 3,
+    username: 'ali',
+    email: 'example@gmail.com',
+    phone: '0123456789',
+    gender: 'male',
+    country: 'sudan',
+    address: '123 str'
+  },
+  {
+    id: 4,
+    username: 'khalid',
+    email: 'ahmed@gmail.com',
+    phone: '0123456789',
+    gender: 'male',
+    country: 'sudan',
+    address: '123 str'
+  },
+  {
+    id: 5,
+    username: 'mohammed',
+    email: 'example@gmail.com',
+    phone: '0123456789',
+    gender: 'male',
+    country: 'sudan',
+    address: '123 str'
+  }
+]
 
 const App = () => {
-  return <div></div>
+  return (
+    <div>
+      <ReactTb
+        columns={columns}
+        data={data}
+        noDataLabel='no data'
+        isDraggable={true}
+        onDragEnd={() => {}}
+        columnKey={'id'}
+        takeHeadersFromObjectKeys={true}
+      />
+    </div>
+  )
 }
 
 export default App
