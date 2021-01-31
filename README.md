@@ -10,20 +10,53 @@
 npm install --save react-tb
 ```
 
-## Usage
+## Usage Example
 
 ```tsx
-import React, { Component } from 'react'
 
-import MyComponent from 'react-tb'
-import 'react-tb/dist/index.css'
+import { ReactTb } from 'react-tb'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <ReactTb
+        columns={columns}
+        data={data}
+        noDataLabel='no data found!'
+        isDraggable={true}
+        onDragEnd={() => {}}
+        columnKey={'id'}
+      />
   }
 }
 ```
+### Using Columns
+
+columns are the array that defines the table columns to show the data like (firstname, lastname, ...etc).
+> columns example
+
+```js
+
+const columns = [
+  {
+    name: "firstname", // column name will show in the header (accept html also)
+    isHidden: false, // you can also hide or show the column by setting isHidden value
+    body: (item) => {
+      // you can use data with the specific column like item.whatever
+      return <td></td> // you should always return jsx decorated by td tag
+    }
+  }
+]
+
+```
+
+### Table Props (required)
+
+|prop name|description|
+|---------|-----------|
+|`column` |the table columns to define table|
+
+
+
 
 ## License
 
