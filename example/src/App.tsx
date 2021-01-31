@@ -116,7 +116,6 @@ const App = () => {
         isDraggable={true}
         onDragEnd={() => {}}
         columnKey={'id'}
-        takeHeadersFromObjectKeys={true}
       />
     </div>
   )
